@@ -12,7 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400..900&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
-   {{awaria}}
+    {% for awarie in awaria %}
+        <p>zgłaszający: {{ awarie.zglaszajacy }}</p>
+        <p>data zgłoszenia: {{ awarie.data_zgloszenia }}</p>
+        <p>lokalizacja: {{ awarie.lokalizacja }}</p>
+        <h2>opis: {{ awarie.opis }}</h2>
+        <h5>priorytet: {{ awarie.priorytet }}</h5>
+        <h5>status: {{ awarie.status }}</h5>
+        <h5>uwagi technika: {{ awarie.uwagi_technika }}</h5>
+    {% endfor %}
 </body>
 </html>

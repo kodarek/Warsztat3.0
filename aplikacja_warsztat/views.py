@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from .models import Awarie
+from django.utils import timezone
+from aplikacja_warsztat.models import Awarie
 
 # Create your views here.
 def awarie(request):
-    awaria = Awarie.objects.all()
-    return render(request, 'aplikacja_warsztat/awarie.html', {})
+    awaria = Awarie.objects.filter(data_zgloszenia__lte=timezone.now()).order_by('data_zgloszenia')
+    
+    return render(request, 'aplikacja_warsztat/awarie.html', {'awaria': awaria})
