@@ -14,14 +14,42 @@
 </head>
 
 <body>
-    {% for awarie in awaria %}
-        <p>zgłaszający: {{ awarie.zglaszajacy }}</p>
-        <p>data zgłoszenia: {{ awarie.data_zgloszenia }}</p>
-        <p>lokalizacja: {{ awarie.lokalizacja }}</p>
-        <h2>opis: {{ awarie.opis }}</h2>
-        <h5>priorytet: {{ awarie.priorytet }}</h5>
-        <h5>status: {{ awarie.status }}</h5>
-        <h5>uwagi technika: {{ awarie.uwagi_technika }}</h5>
-    {% endfor %}
+    <div class="container mt-7">
+        <h2>Moje wpisy</h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="row">lp</th>
+
+                        <th scope="col">Zgłaszający</th>
+                        <th scope="col">Data zgłoszenia</th>
+                        <th scope="col">Lokalizacja</th>
+                        <th scope="col">Opis</th>
+                        <th scope="col">Priorytet</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Uwagi technika</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for awarie in awaria %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ awarie.zglaszajacy }}</td>
+            <td>{{ awarie.data_zgloszenia }}</td>
+            <td>{{ awarie.lokalizacja }}</td>
+            <td>{{ awarie.opis }}</td>
+            <td>{{ awarie.priorytet }}</td>
+            <td>{{ awarie.status }}</td>
+            <td>{{ awarie.uwagi_technika }}</td>
+        </tr>
+            {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
 </body>
 </html>
