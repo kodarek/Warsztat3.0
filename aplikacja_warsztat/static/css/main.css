@@ -5,5 +5,9 @@
 }
 
 body{
-    background-color: #494242;
+    background-color: #3b1616;
+}
+
+thead tr{
+    background-color: #bd6a6a;
 }
